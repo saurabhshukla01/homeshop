@@ -55,8 +55,8 @@
                         <a href="<?php echo base_url(); ?>products/delete/<?php echo $product['product_uid']; ?>" class="btn btn-danger btn-sm btn-circle m-1" title="delete"><i class="fas fa-trash"></i></a>
                         <!--<a class="btn btn-info btn-sm btn-circle m-1" data-toggle="modal" data-target="#viewmodel" title="view"><span class="text-white"><i class="fas fa-mobile-alt"></i></span></a>-->
                         <a class="btn btn-info btn-sm btn-circle m-1" data-toggle="modal" data-target="#viewmodel" id="<?php echo $product['product_uid']; ?>" onclick="showdetils(this);" title="view"><span class="text-white"><i class="fas fa-mobile-alt"></i></span></a>
-                        <a class="btn btn-info btn-sm btn-circle m-1" href="<?php echo base_url(); ?>products/details/<?php echo $product['product_uid']; ?>" title="view_page"><span class="text-white"><i class="fas fa-eye"></i></span></a>
-                        <a class="btn btn-info btn-sm btn-circle m-1" href="<?php echo base_url(); ?>products/pdfdetails/<?php echo $product['product_uid']; ?>" id="pdf" title="pdf"><span class="text-white"><i class="fas fa-download"></i></span></a>
+                        <a class="btn btn-dark btn-sm btn-circle m-1" href="<?php echo base_url(); ?>products/details/<?php echo $product['product_uid']; ?>" title="view_page"><span class="text-white"><i class="fas fa-eye"></i></span></a>
+                        <a class="btn btn-success btn-sm btn-circle m-1" href="<?php echo base_url(); ?>products/pdfdetails/<?php echo $product['product_uid']; ?>" id="pdf" title="pdf"><span class="text-white"><i class="fas fa-download"></i></span></a>
                      </td>
                   </tr>
                   <?php $sn++; ?>
@@ -70,32 +70,33 @@
 <!-- /.container-fluid -->
 <!-- Modal -->
 <div class="modal fade" id="viewmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
+   <div class="modal-dialog smartphone" role="document">
+      <div class="modal-content smartphone-content">
          <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Product Show Single Data</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close smartphone-close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
          </div>
          <div class="modal-body">
             <div class="card-body">
-                 <div class="table-responsive">
-                  <div class="m-auto font-weight-bold">
-                     <p>Product srno :<span class="ml-4" id="product_sn"></span></p>
-                     <p class="mr-4">Product Name :<span class="ml-4" id="product_name"></span></p>
-                     <p class="mr-4">Product Image :<span class="ml-4" id="product_image"></span></p>
-                     <p>Product Category :<span class="ml-4" id="product_category"></span></p>
-                     <p>Product Stock :<span class="ml-4" id="product_stock"></span></p>
-                     <p>Product Price :<span class="ml-4" id="product_price"></span></p>
-                     <p>Product Created At :<span class="ml-4" id="product_created_at"></span></p>
+               <div class="table-responsive">
+                  <div>
+                     <p>Product srno :<span class="ml-4 font-weight-bold" id="product_sn"></span></p>
+                     <p class="mr-4">Product Name :<span class="ml-4 font-weight-bold" id="product_name"></span></p>
+                     <p class="mr-4">Product Image :<span class="ml-4 font-weight-bold" id="product_image"></span></p>
+                     <p>Product Category :<span class="ml-4 font-weight-bold" id="product_category"></span></p>
+                     <p>Product Stock :<span class="ml-4 font-weight-bold" id="product_stock"></span></p>
+                     <p>Product Price :<span class="ml-4 font-weight-bold" id="product_price"></span></p>
+                     <p>Product Created At :<span class="ml-4 font-weight-bold" id="product_created_at"></span></p>
                   </div>
                </div>
             </div>
          </div>
          <div class="modal-footer m-auto">
-            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-            <p>footer @2020 Product Table</p>
+            <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary">Save changes</button>-->
+            <p>footer @2020 Category Table</p>
          </div>
       </div>
    </div>
@@ -103,7 +104,6 @@
 <!-- end model -->
 </div>
 <!-- End of Main Content -->
-
 <script type="text/javascript">
    function showdetils(a){
       var product_uid = a.id;
@@ -117,7 +117,7 @@
       var product_stock= document.getElementById("product_stock_"+product_uid).innerHTML;
       var product_price= document.getElementById("product_price_"+product_uid).innerHTML;
       var product_created_at= document.getElementById("product_created_at_"+product_uid).innerHTML;
-
+   
       
       $("#product_sn").html(sn);
       $("#product_name").html(product_name);
