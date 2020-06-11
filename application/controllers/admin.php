@@ -125,12 +125,27 @@
 			$this->load->view('common/admin/admin-footer');
 		}
 
+		public function investment()
+		{
+			$this->load->view('common/admin/admin-header');
+			$this->load->view('admin/investment');
+			$this->load->view('common/admin/admin-footer');
+		}
+
+		public function transactions()
+		{
+			$this->load->view('common/admin/admin-header');
+			$this->load->view('admin/transactions');
+			$this->load->view('common/admin/admin-footer');
+		}
+
 		public function chart()
 		{
 			$this->load->view('common/admin/admin-header');
 			$this->load->view('admin/chart');
 			$this->load->view('common/admin/admin-footer');
 		}
+		
 
 		public function reset_password()
 		{
