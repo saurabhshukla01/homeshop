@@ -59,6 +59,34 @@
          </div>
       </div>
       <div class="form-group d-flex">
+           <label class="col-sm-4" for="product_status">Product Status: <span class="text-danger">*</span></label>
+           <div class="col-sm-8">
+              <select class="form-control" name="product_status">
+                <?php if($product['product_status'] == 'Unsold'){ ?>
+                  <option selected><?php echo $product['product_status']; ?></option>
+                  <option value="Sold">Sold</option>
+                  <option value="Not Available">Not Available</option>
+                <?php }else if($product['product_status'] == 'sold'){ ?>
+                  <option value="Unsold">Unsold</option>
+                  <option selected><?php echo $product['product_status']; ?></option>
+                  <option value="Not Available">Not Available</option>
+                <?php }else{ ?>
+                    <option value="Unsold">Unsold</option>
+                    <option value="Sold">sold</option>
+                    <option selected value="Not Available">Not Available</option>
+                <?php } ?>
+              </select>
+              <label class="text-danger"><?php echo form_error('product_status', '<td class="error">', '</td>'); ?></label>
+           </div>
+        </div>
+        <div class="form-group d-flex">
+           <label class="col-sm-4" for="product_text">Product Text: <span class="text-danger">*</span></label>
+           <div class="col-sm-8">  
+              <textarea type="text" class="form-control" name="product_text"><?php echo $product['product_text']; ?></textarea>
+              <label class="text-danger"><?php echo form_error('product_text', '<td class="error">', '</td>'); ?></label>
+           </div>
+        </div>
+      <div class="form-group d-flex">
          <label class="col-sm-4" for="product_image">Product Image: <span class="text-danger">*</span></label>
          <div class="col-sm-8">
             <input type="file" name="product_image" class="form-control btn btn-success">

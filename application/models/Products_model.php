@@ -24,6 +24,8 @@
 				'product_stock' => $this->input->post('product_stock'),
 				'product_price' => $this->input->post('product_price'),
 				'product_category' => $this->input->post('product_category'),
+				'product_status' => $this->input->post('product_status'),
+				'product_text' => $this->input->post('product_text'),
 	            'product_image' => $product_image,
 			);
 
@@ -62,6 +64,8 @@
 	            'product_category' => $this->input->post('product_category'),
 	            'product_stock' => $this->input->post('product_stock'),
 	            'product_price' => $this->input->post('product_price'),
+	            'product_status' => $this->input->post('product_status'),
+				'product_text' => $this->input->post('product_text'),
 	            'product_image' => $product_image
 	        );
 	        //print_r($data);
@@ -85,13 +89,15 @@
 	            $output .= '
 	            <tr align="center"><td><b>'.$row->product_name.'</b></td></tr>
 	            <tr>
-	                <td width="25%"><img src="'.base_url().'assets/admin/shop/product/'.$row->product_image.'" style="width:200px;height:200px;"/></td>
+	                <td width="25%"><img src="'.base_url().'assets/admin/shop/product/'.$row->product_image.'" style="width:300px;height:300px;"/></td>
 	                <td width="75%">
 	                    <p><b>Product ID : </b>'.$row->product_id.'</p>
 	                    <p><b>Product Name : </b>'.$row->product_name.'</p>
 	                    <p><b>Product Category : </b>'.$row->product_category.'</p>
 	                    <p><b>Product Stock : </b>'.$row->product_stock.'</p>
 	                    <p><b>Product Price : </b>'.$row->product_price.'</p>
+	                    <p><b>Product Status : </b>'.$row->product_status.'</p>
+	                    <p><b>Product Text : </b>'.$row->product_text.'</p>
 	                    <p><b>Created At : </b>'.$row->created_at.'</p>
 	                </td>
 	            </tr>

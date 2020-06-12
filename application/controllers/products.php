@@ -38,6 +38,8 @@
 				$this->form_validation->set_rules('product_stock', 'Product Stock', 'required');
 				$this->form_validation->set_rules('product_price', 'Product Price', 'required');
 				$this->form_validation->set_rules('product_category', 'Product Category', 'required');
+				$this->form_validation->set_rules('product_status', 'Product Status', 'required');
+				$this->form_validation->set_rules('product_text', 'Product Text', 'required');
 
 				if($this->form_validation->run() === FALSE){
 
@@ -131,6 +133,8 @@
 				$this->form_validation->set_rules('product_stock', 'Product Stock', 'required');
 				$this->form_validation->set_rules('product_price', 'Product Price', 'required');
 				$this->form_validation->set_rules('product_category', 'Product Category', 'required');
+				$this->form_validation->set_rules('product_status', 'Product Status', 'required');
+				$this->form_validation->set_rules('product_text', 'Product Text', 'required');
 	            
 	            if ($this->form_validation->run() === FALSE) {
 	                
@@ -212,6 +216,7 @@
 		        $this->pdf->loadHtml($html_content);
 		        $this->pdf->render();
 		        $this->pdf->stream("".$product_uid.".pdf", array("Attachment"=>0));
+		        
 		    } else {
 
 		    	redirect('admin/login');

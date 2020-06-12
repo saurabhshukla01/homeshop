@@ -1,12 +1,46 @@
 <?php
 	class Admin extends CI_Controller{
 
+		public function index(){
+
+			if($this->session->userdata('logged_in')){
+
+				$data['title'] = 'Show Products Pages';
+
+				$data['products'] = $this->Products_model->get_products();
+
+				$this->load->view('common/admin/admin-header');
+				$this->load->view('admin/index',$data);
+				$this->load->view('common/admin/admin-footer');
+			}
+			else{
+				redirect('admin/login');
+			}
+		}
+
+		public function sales(){
+
+			if($this->session->userdata('logged_in')){
+
+				$data['title'] = 'Show Products Pages';
+
+				$data['products'] = $this->Products_model->get_products();
+
+				$this->load->view('common/admin/admin-header');
+				$this->load->view('admin/sales',$data);
+				$this->load->view('common/admin/admin-footer');
+			}
+			else{
+				redirect('admin/login');
+			}
+		}
+
 		public function dashboard(){
 
 			if($this->session->userdata('logged_in')){
 
 				$this->load->view('common/admin/admin-header');
-				$this->load->view('admin/index');
+				$this->load->view('admin/dashboard');
 				$this->load->view('common/admin/admin-footer');
 			}
 			else{

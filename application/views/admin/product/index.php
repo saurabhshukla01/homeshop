@@ -23,6 +23,8 @@
                      <th>Product Image</th>
                      <th>Product Stock</th>
                      <th>Product Price</th>
+                     <th>Product Status</th>
+                     <th>Product Text</th>
                      <th>Product Date</th>
                      <th>Action</th>
                   </tr>
@@ -35,6 +37,8 @@
                      <th>Product Image</th>
                      <th>Product Stock</th>
                      <th>Product Price</th>
+                     <th>Product Status</th>
+                     <th>Product Text</th>
                      <th>Product Date</th>
                      <th>Action</th>
                   </tr>
@@ -49,6 +53,8 @@
                      <td id="product_image_<?php echo $product['product_uid']; ?>"><img src="<?php echo base_url(); ?>assets/admin/shop/product/<?php echo $product['product_image']; ?>" style="width:50px;height:50px;"/></td>
                      <td id="product_stock_<?php echo $product['product_uid']; ?>"><?php echo $product['product_stock']; ?></td>
                      <td id="product_price_<?php echo $product['product_uid']; ?>"><?php echo $product['product_price']; ?></td>
+                     <td id="product_status_<?php echo $product['product_uid']; ?>"><?php echo $product['product_status']; ?></td>
+                     <td id="product_text_<?php echo $product['product_uid']; ?>"><?php echo $product['product_text']; ?></td>
                      <td id="product_created_at_<?php echo $product['product_uid']; ?>"><?php echo $product['created_at']; ?></td>
                      <td>
                         <a href="<?php echo base_url(); ?>products/edit/<?php echo $product['product_uid']; ?>" class="btn btn-primary btn-sm btn-circle m-1" title="Edit"><i class="fas fa-edit"></i></a>
@@ -88,6 +94,8 @@
                      <p>Product Category :<span class="ml-4 font-weight-bold" id="product_category"></span></p>
                      <p>Product Stock :<span class="ml-4 font-weight-bold" id="product_stock"></span></p>
                      <p>Product Price :<span class="ml-4 font-weight-bold" id="product_price"></span></p>
+                     <p>Product Status :<span class="ml-4 font-weight-bold" id="product_status"></span></p>
+                     <p>Product Text :<span class="ml-4 font-weight-bold" id="product_text"></span></p>
                      <p>Product Created At :<span class="ml-4 font-weight-bold" id="product_created_at"></span></p>
                   </div>
                </div>
@@ -116,6 +124,8 @@
       var product_category= document.getElementById("product_category_"+product_uid).innerHTML;
       var product_stock= document.getElementById("product_stock_"+product_uid).innerHTML;
       var product_price= document.getElementById("product_price_"+product_uid).innerHTML;
+      var product_status= document.getElementById("product_status_"+product_uid).innerHTML;
+      var product_text= document.getElementById("product_text_"+product_uid).innerHTML;
       var product_created_at= document.getElementById("product_created_at_"+product_uid).innerHTML;
    
       
@@ -125,6 +135,8 @@
       $("#product_category").html(product_category);
       $("#product_stock").html(product_stock);
       $("#product_price").html(product_price);
+      $("#product_status").html(product_status);
+      $("#product_text").html(product_text);
       $("#product_created_at").html(product_created_at);
       
       

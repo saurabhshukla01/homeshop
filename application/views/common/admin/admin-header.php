@@ -37,19 +37,19 @@
          </li>
          <hr class="sidebar-divider">
          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>adminpage">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin">
             <i class="fa fa-home"></i>
             <span>Home</span></a>
          </li>
          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>admin/transactions">
+            <a class="nav-link" href="<?php echo base_url(); ?>bankaccount/checkout">
             <i class="fa fa-credit-card"></i>
-            <span>Transactions</span></a>
+            <span>Checkout</span></a>
          </li>
          <!-- Divider -->
          <hr class="sidebar-divider">
          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>adminpage/sales">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/sales">
             <i class="fa fa-shopping-cart"></i>
             <span>Sales</span></a>
          </li>
@@ -75,7 +75,7 @@
             <span>Reporting</span></a>
          </li>
          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>adminpage/bankaccount">
+            <a class="nav-link" href="<?php echo base_url(); ?>bankaccount">
             <i class="fas fa-bank"></i>
             <span>Bank Account</span></a>
          </li>

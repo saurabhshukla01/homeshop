@@ -1,14 +1,14 @@
 <!-- Begin Page Content -->
 <div class="container-fluid m-auto">
-	<!-- Page Heading -->
-	<header class="container bg-primary text-center py-5 mb-4">
-   		<h3 class="font-weight-light text-white text-center">Homeshop 18 Products Home Page</h3>
-	</header>
+  <!-- Page Heading -->
+  <header class="container bg-primary text-center py-5 mb-4">
+      <h3 class="font-weight-light text-white text-center">Homeshop 18 Products Sales Page</h3>
+  </header>
 <!-- Page Content -->
 <div class="container">
   <div class="row">
     <?php foreach($products as $product) : ?>
-    <div class="col-xl-4 col-md-6 mb-4">
+    <div class="col-xl-4 col-md-6 p-2">
       <div class="card border-0 shadow">
         <img src="<?php echo base_url(); ?>assets/admin/shop/product/<?php echo $product['product_image']; ?>" style="width:auto;height:200px;" class="card-img-top m-2" alt="...">
         <div class="card-body text-center">
@@ -33,5 +33,5 @@
 
 </div>
 <!-- /.container -->
-	</div>
+  </div>
 </div>
