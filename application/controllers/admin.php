@@ -1,13 +1,22 @@
 <?php
 	class Admin extends CI_Controller{
 
-		public function index(){
+		public function index($offset = 0){
 
 			if($this->session->userdata('logged_in')){
 
+				// Pagination Config
+				$config['base_url'] = base_url() . 'admin/index/';
+				$config['total_rows'] = $this->db->count_all('products');
+				$config['per_page'] = 9;
+				$config['uri_segment'] = 3;
+
+				// Init Pagination
+				$this->pagination->initialize($config);
+
 				$data['title'] = 'Show Products Pages';
 
-				$data['products'] = $this->Products_model->get_products();
+				$data['products'] = $this->Products_model->get_products($config['per_page'], $offset);
 
 				$this->load->view('common/admin/admin-header');
 				$this->load->view('admin/index',$data);
@@ -18,13 +27,22 @@
 			}
 		}
 
-		public function sales(){
+		public function sales($offset = 0){
 
 			if($this->session->userdata('logged_in')){
 
+				// Pagination Config
+				$config['base_url'] = base_url() . 'admin/sales/';
+				$config['total_rows'] = $this->db->count_all('products');
+				$config['per_page'] = 9;
+				$config['uri_segment'] = 3;
+
+				// Init Pagination
+				$this->pagination->initialize($config);
+
 				$data['title'] = 'Show Products Pages';
 
-				$data['products'] = $this->Products_model->get_products();
+				$data['products'] = $this->Products_model->get_products($config['per_page'], $offset);
 
 				$this->load->view('common/admin/admin-header');
 				$this->load->view('admin/sales',$data);
@@ -132,7 +150,7 @@
 			$this->session->unset_userdata('logged_in');
 			$this->session->unset_userdata('admin_uid');
 			$this->session->unset_userdata('email');
-			echo "logout";
+			//echo "logout";
 
 			// Set message
 			//$this->session->set_flashdata('user_loggedout', 'You are now logged out');

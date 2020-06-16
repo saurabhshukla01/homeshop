@@ -4,7 +4,7 @@
   width: auto;
   height: auto;
   margin: auto;
-  border: 16px blue solid;
+  border: 16px #17a2b8 solid;
   border-top-width: 60px;
   border-bottom-width: 60px;
   border-radius: 36px;
@@ -54,3 +54,53 @@
 }
 
 /* End SmartPhone css */
+
+
+/* list-pagination css */
+
+.page-list-pagination {
+    font-size:14px;
+    font-weight: 500;
+    display: block;
+    padding: 15px;
+  }
+
+.page-list-pagination strong {
+    padding:10px 15px;
+    /*border:1px #ccc solid;*/
+    border-radius: 50% !important;
+    margin: 5px 5px;
+    background-color: #ccc;
+    color:white;
+  }
+
+.page-list-pagination a {
+    padding:10px 15px;
+    text-decoration: none;
+    /*border:1px #ccc solid;*/
+    border-radius: 50% !important;
+    margin: 5px 5px;
+    background-color: #1bb1dc;
+    color:white;
+  }
+
+.page-list-pagination a:hover{
+  background-color: #097298;
+}
+
+
+@media screen and (min-width:320px) and (max-width:480px) {
+  .page-list-pagination {
+      font-size: 12px;
+      font-weight: 500;
+      width: 100%;
+      display: block;
+      padding: 10px 12px;
+      /*float: left !important;
+      text-align: left !important;*/
+      margin: 5px 5px;
+
+  }
+}
+
+/* list-pagination  css  */

@@ -13,7 +13,7 @@
       <link href="<?php echo base_url(); ?>assets/admin/css/mystyle.css" rel="stylesheet">
       <!-- Custom styles for this template-->
       <link href="<?php echo base_url(); ?>assets/admin/css/sb-admin-2.min.css" rel="stylesheet">
-      <link href="<?php echo base_url(); ?>assets/admin/css/mystyle.css" rel="stylesheet">
+      <link href="<?php echo base_url(); ?>assets/admin/css/my-style.css" rel="stylesheet">
    </head>
    <body id="page-top">
       <!-- Page Wrapper -->
@@ -35,12 +35,42 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
          </li>
-         <hr class="sidebar-divider">
          <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>admin">
             <i class="fa fa-home"></i>
             <span>Home</span></a>
          </li>
+         <hr class="sidebar-divider">
+         <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>products">
+            <i class="fa fa-folder"></i>
+            <span>Products</span></a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+               <!--<i class="fas fa-fw fa-cog"></i>-->
+               <i class="fa fa-list-alt" aria-hidden="true"></i>
+               <span>Categories</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                  <h6 class="collapse-header">Custom Categories:</h6>
+                  <a class="collapse-item" href="<?php echo base_url(); ?>category">All Categories</a>
+                  <a class="collapse-item" href="<?php echo base_url(); ?>products/filter_product/1">Mens category</a>
+                  <a class="collapse-item" href="<?php echo base_url(); ?>products/filter_product/2">Women's Category</a>
+                  <a class="collapse-item" href="<?php echo base_url(); ?>products/filter_product/3">Children's Category</a>
+                  <a class="collapse-item" href="<?php echo base_url(); ?>products/filter_product/4">Devices's Category</a>
+                  <a class="collapse-item" href="<?php echo base_url(); ?>products/filter_product/5">Technology Category</a>
+                  <a class="collapse-item" href="<?php echo base_url(); ?>products/filter_product/6">Women Category</a>
+               </div>
+            </div>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>admin/sales">
+            <i class="fa fa-shopping-cart"></i>
+            <span>Sales</span></a>
+         </li>
+         <hr class="sidebar-divider">
          <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>bankaccount/checkout">
             <i class="fa fa-credit-card"></i>
@@ -48,11 +78,6 @@
          </li>
          <!-- Divider -->
          <hr class="sidebar-divider">
-         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>admin/sales">
-            <i class="fa fa-shopping-cart"></i>
-            <span>Sales</span></a>
-         </li>
          <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>adminpage/members">
             <i class="fa fa-object-group"></i>
@@ -100,40 +125,6 @@
          <div class="sidebar-heading">
             Interface
          </div>
-         <!-- Nav Item - Pages Collapse Menu -->
-         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-               <!--<i class="fas fa-fw fa-cog"></i>-->
-               <i class="fa fa-list-alt" aria-hidden="true"></i>
-               <span>Categories</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-               <div class="bg-white py-2 collapse-inner rounded">
-                  <h6 class="collapse-header">Custom Categories:</h6>
-                  <a class="collapse-item" href="<?php echo base_url(); ?>category">All Categories</a>
-                  <a class="collapse-item" href="#">Men Category</a>
-                  <a class="collapse-item" href="#">Women Category</a>
-               </div>
-            </div>
-         </li>
-         <!-- Nav Item - Utilities Collapse Menu -->
-         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-            <!--<i class="fas fa-fw fa-wrench"></i>-->
-            <i class="fas fa-folder"></i>
-            <span>Products</span></a>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-               <div class="bg-white py-2 collapse-inner rounded">
-                  <h6 class="collapse-header">Custom Products:</h6>
-                  <a class="collapse-item" href="<?php echo base_url(); ?>products">All Products</a>
-                  <a class="collapse-item" href="#">Watch</a>
-                  <a class="collapse-item" href="#">Clothes</a>
-                  <a class="collapse-item" href="#">Furnitures</a>
-                  <a class="collapse-item" href="#">Other</a>
-               </div>
-            </div>
-         </li>
          <!-- Divider -->
          <hr class="sidebar-divider">
          <!-- Heading -->
@@ -324,6 +315,14 @@
                   <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                </div>
             </li>
+            <!-- Nav Item - Add To Cart -->
+            <li class="nav-item dropdown no-arrow mx-1">
+               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-shopping-cart"></i>
+                  <!-- Counter - Messages -->
+                  <span class="badge badge-danger badge-counter">11</span>
+               </a>
+            </li>
             <div class="topbar-divider d-none d-sm-block"></div>
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
@@ -355,3 +354,15 @@
          </ul>
       </nav>
       <!-- End of Topbar -->
+
+<script type="text/javascript">
+  function clickme(span){
+    var product_uid = span.id;
+    var button = document.getElementById(product_uid),
+      count = 0;
+    button.onclick = function() {
+      count += 1;
+      button.innerHTML = "Add Cart : " + count;
+    };
+  }
+</script>

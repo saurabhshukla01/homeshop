@@ -114,9 +114,15 @@
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 								<li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
 								<li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
-								<li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<li><a href="<?php echo base_url(); ?>shop/checkout"><i class="fa fa-check"></i> Checkout</a></li>
+
+								<?php if(!$this->session->userdata('logged_in')) : ?>
+									<li><a href="<?php echo base_url(); ?>users/login"><i class="fa fa-unlock-alt"></i> Login</a></li>
+									<li><a href="<?php echo base_url(); ?>users/register"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<?php endif; ?>
+								<?php if($this->session->userdata('logged_in')) : ?>
+									<li><a href="<?php echo base_url(); ?>users/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+								<?php endif; ?>
 							</ul>
 						</li>
 						<!-- /Account -->

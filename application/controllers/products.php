@@ -224,5 +224,25 @@
 		    }
 	    }
 
+	    public function filter_product($category_id)
+	    {
+	        
+	        if ($this->session->userdata('logged_in')) {
+
+		        $data['filter_products'] = $this->Products_model->filter_product_by_category_name($category_id);
+		        //echo "<pre>"; print_r($data['products1']);die();
+
+	            $this->load->view('common/admin/admin-header');
+	            $this->load->view('admin/product/filter-product', $data);
+	            $this->load->view('common/admin/admin-footer');
+
+
+	        }else{
+
+	            redirect('admin/login');
+	        }
+	        
+	    }
+
 
 	}

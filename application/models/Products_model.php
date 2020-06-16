@@ -5,7 +5,12 @@
 			$this->load->database();
 		}
 
-		public function get_products(){
+		public function get_products($limit = FALSE, $offset = FALSE){
+
+			if($limit){
+				
+				$this->db->limit($limit, $offset);
+			}
 
 			$query = $this->db->get('products');
 
@@ -76,6 +81,18 @@
 	        //print_r($this->db->last_query());
 	        //die();
 	        return true;
+	    }
+
+	    public function filter_product_by_category_name($category_id){
+
+	    	$query = $this->db->select('*');
+	    	$query = $this->db->join('categories','products.product_category = categories.category_name');
+	    	$query = $this->db->get_where('products', array('category_id'=>$category_id));
+
+			//print_r($this->db->last_query());
+			//die();
+			return $query->result_array();
+
 	    }
 
 	    function fetch_single_details($product_uid)
